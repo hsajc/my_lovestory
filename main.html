@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Love Story</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+    body {
+        font-family: 'Poppins', sans-serif;
+        background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+        position: relative;
+    }
+    .container {
+        background: white;
+        padding: 30px;
+        border-radius: 20px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        max-width: 800px;
+        margin: 40px auto;
+        text-align: center;
+    }
+    h1 {
+        color: #e91e63;
+        font-size: 36px;
+        margin-bottom: 20px;
+        font-family: 'Dancing Script', cursive;
+    }
+    .profile-pic {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        border: 5px solid #ff4081;
+        object-fit: cover;
+        margin-bottom: 20px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+    .timer {
+        font-size: 24px;
+        font-weight: bold;
+        color: #ff4081;
+        text-shadow: 2px 2px 5px rgba(255, 64, 129, 0.5);
+        margin-bottom: 30px;
+    }
+    .timer span {
+        font-size: 28px;
+        color: #d81b60;
+    }
+    .button-container {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin-bottom: 30px;
+    }
+    .nav-button {
+        padding: 14px;
+        font-size: 18px;
+        background: #ff4081;
+        color: white;
+        text-decoration: none;
+        border-radius: 12px;
+        transition: 0.3s;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    .nav-button:hover {
+        background: #d81b60;
+        transform: scale(1.05);
+    }
+    .timeline {
+        text-align: left;
+        margin-top: 30px;
+        padding-left: 20px;
+    }
+    .timeline-item {
+        margin-bottom: 20px;
+        position: relative;
+        padding-left: 25px;
+    }
+    .timeline-item::before {
+        content: '❤️';
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+    .heart {
+        position: fixed;
+        top: -10px;
+        color: #ff4081;
+        opacity: 0.7;
+        animation: fall 7s linear infinite;
+        z-index: 9999;
+    }
+    @keyframes fall {
+        0% {transform: translateY(0) rotate(0deg);}
+        100% {transform: translateY(100vh) rotate(360deg);}
+    }
+    #music-btn {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: #ff4081;
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        cursor: pointer;
+        z-index: 9999;
+        font-size: 20px;
+    }
+    @media(max-width:600px){
+        .container {padding:20px;}
+        .profile-pic {width:100px; height:100px;}
+        h1 {font-size:28px;}
+        .timer {font-size:18px;}
+        .nav-button {font-size:16px; padding:12px;}
+    }
+</style>
+</head>
+
+<body>
+
+<script>
+    for(let i=0; i<15; i++){
+        let heart = document.createElement('div');
+        heart.classList.add('heart');
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.animationDuration = (Math.random() * 3 + 4) + "s";
+        heart.innerHTML = '💖';
+        document.body.appendChild(heart);
+    }
+</script>
+
+<button id="music-btn">🎵</button>
+<audio id="bg-music" loop>
+    <source src="your_music.mp3" type="audio/mpeg">
+</audio>
+
+<div class="container">
+    <img src="your_photo.jpg" alt="Us" class="profile-pic">
+    <h1>Since the day I fell for U 💖</h1>
+
+    <div class="timer" id="timer"></div>
+
+    <div class="button-container">
+        <a href="day_we_met.html" class="nav-button">The Day We Met</a>
+        <a href="first_talk.html" class="nav-button">Our First Talk - The Beginning</a>
+        <a href="memories.html" class="nav-button">Memories</a>
+        <a href="late_night_talks.html" class="nav-button">Late Night Talks</a>
+        <a href="journey.html" class="nav-button">Our Journey Together</a>
+    </div>
+
+    <div class="timeline">
+        <h2 style="color:#e91e63; font-family: 'Dancing Script', cursive;">Our Love Story Timeline ✨</h2>
+        <div class="timeline-item">💖 January 9, 2024 — We first met</div>
+        <div class="timeline-item">✨ January 10, 2024 — Our first date from my pov hehe cause thats when we went to noosa</div>
+        <div class="timeline-item">🎉Janurary 12, its your birthday my love</div>
+        <div class="timeline-item">💬 January 12, 2024 — Our late night talks</div>
+        <div class="timeline-item"></div>
+    </div>
+</div>
+`
+<script>
+    function updateTimer() {
+        var startDate = new Date("January 12, 2024 00:00:00");
+        var now = new Date();
+        var diff = now - startDate;
+
+        var days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+        var minutes = Math.floor((diff / (1000 * 60)) % 60);
+        var seconds = Math.floor((diff / 1000) % 60);
+
+        document.getElementById("timer").innerHTML = `
+            <span>${days}</span> days : 
+            <span>${hours}</span> hours : 
+            <span>${minutes}</span> minutes : 
+            <span>${seconds}</span> seconds
+        `;
+    }
+    setInterval(updateTimer, 1000);
+    updateTimer();
+
+    // Music toggle
+    const musicBtn = document.getElementById('music-btn');
+    const music = document.getElementById('bg-music');
+    let playing = false;
+    musicBtn.onclick = () => {
+        if(!playing){
+            music.play();
+            musicBtn.innerText = '⏸️';
+        } else {
+            music.pause();
+            musicBtn.innerText = '🎵';
+        }
+        playing = !playing;
+    }
+</script>
+
+</body>
+</html>
